@@ -31,7 +31,7 @@
       @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
       .slide-caption {
-         background-color: rgba(0, 0, 0, 0.3);
+         background-color: rgba(0, 0, 0, 0.4);
       }
    </style>
 
@@ -101,41 +101,46 @@
                <div class="carousel-caption d-md-block">
                   <h5><span class="slide-caption">Men's wear</span></h5>
                   <p><span class="slide-caption">Attractive and affordable</span></p>
-                  <a href="men.html"><button class="btn btn-sm btn-danger">Shop now</button></a>
+                  <a href="store.html?storeID=men"><button class="btn btn-sm btn-danger">Shop now</button></a>
                </div>
             </div>
+
             <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true data-keyboard=true>
                <img src="images/index/womenEthnicP1.jpg" class="d-block w-100" alt="women's ethnic wear pic">
                <div class="carousel-caption d-md-block">
                   <h5><span class="slide-caption">Women's Ethnic Wear</span></h5>
                   <p><span class="slide-caption">Flaunt your ethnic look with style</span></p>
-                  <a href="women.html"><button class="btn btn-sm btn-danger">Shop now</button></a>
+                  <a href="store.html?storeID=women"><button class="btn btn-sm btn-danger">Shop now</button></a>
                </div>
             </div>
+
             <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true data-keyboard=true>
                <img src="images/index/womenEthnicP2.jpg" class="d-block w-100" alt="women's ethnic wear pic">
                <div class="carousel-caption d-md-block">
                   <h5><span class="slide-caption">Women's Ethnic Wear</span></h5>
                   <p><span class="slide-caption">Find the perfect attair for you</span></p>
-                  <a href="women.html"><button class="btn btn-sm btn-danger">Shop now</button></a>
+                  <a href="store.html?storeID=women"><button class="btn btn-sm btn-danger">Shop now</button></a>
                </div>
             </div>
+
             <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true data-keyboard=true>
                <img src="images/index/womenWestern.jpg" class="d-block w-100" alt="women's Western collection pic">
                <div class="carousel-caption d-md-block">
                   <h5><span class="slide-caption">Western collection for women</span></h5>
                   <p><span class="slide-caption">Designed for better</span></p>
-                  <a href="women.html"><button class="btn btn-sm btn-danger">Shop now</button></a>
+                  <a href="store.html?storeID=women"><button class="btn btn-sm btn-danger">Shop now</button></a>
                </div>
             </div>
+
             <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true data-keyboard=true>
                <img src="images/index/kidswear.jpg" class="d-block w-100" alt="kids wear">
                <div class="carousel-caption d-md-block">
                   <h5><span class="slide-caption">Clothing for kids</span></h5>
                   <p><span class="slide-caption">Smart kidswear</span></p>
-                  <a href="women.html"><button class="btn btn-sm btn-danger">Shop now</button></a>
+                  <a href="store.html?storeID=kids"><button class="btn btn-sm btn-danger">Shop now</button></a>
                </div>
             </div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                data-bs-slide="prev">
                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -153,9 +158,12 @@
       <div class="container my-md-4 my-4">
          <div class="row align-items-center">
             <div class="col"></div>
-            <div class="col-md-4 col-6"><a href="store.html"><button class="btn btn-danger w-100">
+            <div class="col-md-4 col-6">
+               <a href="store.html?storeID=kids"><button class="btn btn-danger w-100">
                      <h5>Visit Store</h5>
-                  </button></a></div>
+                  </button>
+               </a>
+            </div>
             <div class="col"></div>
          </div>
          <div class="row gx-1 my-sm-4 my-3 align-items-center">
@@ -171,203 +179,372 @@
          </div>
       </div>
 
-      <div class="container my-5">
-         <div class="row g-sm-5 g-5 justify-content-center card-group">
+      <div class="container">
+         <div class="row g-sm-5 g-3">
+            <!-- col 1 -->
+            <div class="col-lg-4 col-sm-6 col-12">
+               <div id="carouselExampleCaptions" class="carousel carousel-fade slide" data-bs-ride="carousel"
+                  style="z-index:2;">
+                  <div class="carousel-indicators">
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                  </div>
+                  <div class="carousel-inner">
+                     <div class="carousel-item active" data-bs-interval="4000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/surgicalmasksingle.jpg" class="d-block w-100"
+                           alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">Surgical Masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
 
-            <!-- mask 1  -->
-            <div class="col-lg-3 col-md-4 col-12">
-               <div class="card border-dark">
-                  <img src="images/cards/mask1.jpg" class="card-img-top" alt="surgical_mask.jpg">
-                  <div class="card-body">
-                     <h5 class="card-title">Surgical Masks</h5>
-                  </div>
-                  <div class="card-body">
-                     <p class="card-text">Set of 100 Surgical masks</p>
-                  </div>
-                  <div class="card-footer">
-                     <a href="#" class="card-link"><button type="button" class="btn btn-danger">See more</button></a>
+                     <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/cottonmasksmeesho.jpg" class="d-block w-100"
+                           alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">Cotton Masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/n95frontview.jpg" class="d-block w-100" alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">N-95 face-masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                     </button>
+                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                     </button>
                   </div>
                </div>
             </div>
 
-            <!-- mask 2 -->
-            <div class="col-lg-3 col-md-4 col-12">
-               <div class="card border-dark">
-                  <img src="images/cards/mask2.jpg" class="card-img-top" alt="cotton_mask.jpg">
-                  <div class="card-body">
-                     <h5 class="card-title">Cotton Masks</h5>
+            <!-- col 2 -->
+            <div class="col-lg-4 col-sm-6 col-12">
+               <div id="carouselExampleCaptions" class="carousel carousel-fade slide" data-bs-ride="carousel"
+                  style="z-index:2;">
+                  <div class="carousel-indicators">
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
                   </div>
-                  <div class="card-body">
-                     <p class="card-text">Skin friendly 100% cotton Surgical masks</p>
-                  </div>
-                  <div class="card-footer">
-                     <a href="#" class="card-link"><button type="button" class="btn btn-danger">See more</button></a>
+                  <div class="carousel-inner">
+                     <div class="carousel-item active" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/surgicalmasksingle.jpg" class="d-block w-100"
+                           alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">Surgical Masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/cottonmasksmeesho.jpg" class="d-block w-100"
+                           alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">Cotton Masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/n95frontview.jpg" class="d-block w-100" alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">N-95 face-masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                     </button>
+                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                     </button>
                   </div>
                </div>
             </div>
 
-            <!-- mask 3 -->
-            <div class="col-lg-3 col-md-4 col-12">
-               <div class="card border-dark">
-                  <img src="images/cards/mask3.jpg" class="card-img-top" alt="cotton_mask.jpg">
-                  <div class="card-body">
-                     <h5 class="card-title">N-95 Masks</h5>
+            <!-- col 3 -->
+            <div class="col-lg-4 col-sm-6 col-12">
+               <div id="carouselExampleCaptions" class="carousel carousel-fade slide" data-bs-ride="carousel"
+                  style="z-index:2;">
+                  <div class="carousel-indicators">
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
                   </div>
-                  <div class="card-body">
-                     <p class="card-text">Set of 10 multicoloured N-95 masks</p>
-                  </div>
-                  <div class="card-footer">
-                     <a href="#" class="card-link"><button type="button" class="btn btn-danger">See more</button></a>
+                  <div class="carousel-inner">
+                     <div class="carousel-item active" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/surgicalmasksingle.jpg" class="d-block w-100"
+                           alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">Surgical Masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/cottonmasksmeesho.jpg" class="d-block w-100"
+                           alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">Cotton Masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/n95frontview.jpg" class="d-block w-100" alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">N-95 face-masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                     </button>
+                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                     </button>
                   </div>
                </div>
             </div>
 
-            <!-- gloves 1 -->
-            <div class="col-lg-3 col-md-4 col-12">
-               <div class="card border-dark">
-                  <img src="images/cards/gloves1.jpg" class="card-img-top" alt="plastic_gloves.jpg">
-                  <div class="card-body">
-                     <h5 class="card-title">Polythene Gloves</h5>
+            <!-- col 4 -->
+            <div class="col-lg-4 col-sm-6 col-12">
+               <div id="carouselExampleCaptions" class="carousel carousel-fade slide" data-bs-ride="carousel"
+                  style="z-index:2;">
+                  <div class="carousel-indicators">
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
                   </div>
-                  <div class="card-body">
-                     <p class="card-text">Set of Polythene Gloves</p>
-                  </div>
-                  <div class="card-footer">
-                     <a href="#" class="card-link"><button type="button" class="btn btn-danger">See more</button></a>
+                  <div class="carousel-inner">
+                     <div class="carousel-item active" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/surgicalmasksingle.jpg" class="d-block w-100"
+                           alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">Surgical Masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/cottonmasksmeesho.jpg" class="d-block w-100"
+                           alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">Cotton Masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/n95frontview.jpg" class="d-block w-100" alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">N-95 face-masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                     </button>
+                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                     </button>
                   </div>
                </div>
             </div>
 
-            <!-- gloves 2 -->
-            <div class="col-lg-3 col-md-4 col-12">
-               <div class="card border-dark">
-                  <img src="images/cards/gloves2.jpg" class="card-img-top" alt="house-hold_gloves.jpg">
-                  <div class="card-body">
-                     <h5 class="card-title">Peele wale Gloves</h5>
+            <!-- col 5 -->
+            <div class="col-lg-4 col-sm-6 col-12">
+               <div id="carouselExampleCaptions" class="carousel carousel-fade slide" data-bs-ride="carousel"
+                  style="z-index:2;">
+                  <div class="carousel-indicators">
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
                   </div>
-                  <div class="card-body">
-                     <p class="card-text">Peela peela gloves</p>
-                  </div>
-                  <div class="card-footer">
-                     <a href="#" class="card-link"><button type="button" class="btn btn-danger">See more</button></a>
+                  <div class="carousel-inner">
+                     <div class="carousel-item active" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/surgicalmasksingle.jpg" class="d-block w-100"
+                           alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">Surgical Masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/cottonmasksmeesho.jpg" class="d-block w-100"
+                           alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">Cotton Masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/n95frontview.jpg" class="d-block w-100" alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">N-95 face-masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
+
+                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                     </button>
+                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                     </button>
                   </div>
                </div>
             </div>
 
-            <!-- gloves 3 -->
-            <div class="col-lg-3 col-md-4 col-12">
-               <div class="card border-dark">
-                  <img src="images/cards/gloves3.jpg" class="card-img-top" alt="house-hold_gloves.jpg">
-                  <div class="card-body">
-                     <h5 class="card-title">Badhiya wale Gloves</h5>
+            <!-- col 6 -->
+            <div class="col-lg-4 col-sm-6 col-12">
+               <div id="carouselExampleCaptions" class="carousel carousel-fade slide" data-bs-ride="carousel"
+                  style="z-index:2;">
+                  <div class="carousel-indicators">
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
                   </div>
-                  <div class="card-body">
-                     <p class="card-text">Top class maal gloves</p>
-                  </div>
-                  <div class="card-footer">
-                     <a href="#" class="card-link"><button type="button" class="btn btn-danger">See more</button></a>
-                  </div>
-               </div>
-            </div>
+                  <div class="carousel-inner">
+                     <div class="carousel-item active" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/surgicalmasksingle.jpg" class="d-block w-100"
+                           alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">Surgical Masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
 
-            <!-- sanitizer 1 -->
-            <div class="col-lg-3 col-md-4 col-12">
-               <div class="card border-dark">
-                  <img src="images/cards/sanitizer1.jpg" class="card-img-top" alt="sunglasses.jpg">
-                  <div class="card-body">
-                     <h5 class="card-title">Hand sanitizer</h5>                     
-                  </div>
-                  <div class="card-body">
-                     <p class="card-text">Hand sanitizer</p>                     
-                  </div>
-                  <div class="card-footer">
-                     <a href="#" class="card-link"><button type="button" class="btn btn-danger">See more</button></a>
-                   </div>
-               </div>
-            </div>
+                     <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/cottonmasksmeesho.jpg" class="d-block w-100"
+                           alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">Cotton Masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
 
-            <!-- sanitizer 2 -->
-            <div class="col-lg-3 col-md-4 col-12">
-               <div class="card border-dark">
-                  <img src="images/cards/sanitizer2.jpg" class="card-img-top" alt="sunglasses.jpg">
-                  <div class="card-body">
-                     <h5 class="card-title">Hand sanitizer</h5>                     
-                  </div>
-                  <div class="card-body">
-                     <p class="card-text">Hand sanitizer</p>                     
-                  </div>
-                  <div class="card-footer">
-                     <a href="#" class="card-link"><button type="button" class="btn btn-danger">See more</button></a>
-                   </div>
-               </div>
-            </div>
+                     <div class="carousel-item" data-bs-interval="2000" data-pause="hover" data-touch=true
+                        data-keyboard=true>
+                        <img src="images/masks/n95frontview.jpg" class="d-block w-100" alt="men's collection carousel">
+                        <div class="carousel-caption d-md-block">
+                           <h5><span class="slide-caption">N-95 face-masks</span></h5>
+                           <a href="mask.html"><button class="btn btn-sm btn-danger">See all</button></a>
+                        </div>
+                     </div>
 
-            <!-- sanitizer 3 -->
-            <div class="col-lg-3 col-md-4 col-12">
-               <div class="card border-dark">
-                  <img src="images/cards/sanitizer3.jpg" class="card-img-top" alt="sunglasses.jpg">
-                  <div class="card-body">
-                     <h5 class="card-title">Hand sanitizer</h5>                     
-                  </div>
-                  <div class="card-body">
-                     <p class="card-text">Hand sanitizer</p>                     
-                  </div>
-                  <div class="card-footer">
-                     <a href="#" class="card-link"><button type="button" class="btn btn-danger">See more</button></a>
-                   </div>
-               </div>
-            </div>
-
-            <!-- sunglasses 1 -->
-            <div class="col-lg-3 col-md-4 col-12">
-               <div class="card border-dark">
-                  <img src="images/cards/sunglasses1.jpg" class="card-img-top" alt="sunglasses.jpg">
-                  <div class="card-body">
-                     <h5 class="card-title">Badhiya wale Sunglasses</h5>
-                  </div>
-                  <div class="card-body">
-                     <p class="card-text">Top class maal sun-glasses</p>
-                  </div>
-                  <div class="card-footer">
-                     <a href="#" class="card-link"><button type="button" class="btn btn-danger">See more</button></a>
-                  </div>
-               </div>
-            </div>
-
-            <!-- sunglasses 2 -->
-            <div class="col-lg-3 col-md-4 col-12">
-               <div class="card border-dark">
-                  <img src="images/cards/sunglasses2.jpg" class="card-img-top" alt="sunglasses.jpg">
-                  <div class="card-body">
-                     <h5 class="card-title">Sunglasses</h5>
-                  </div>
-                  <div class="card-body">
-                     <p class="card-text">Top class maal sun-glasses</p>
-                  </div>
-                  <div class="card-footer">
-                     <a href="#" class="card-link"><button type="button" class="btn btn-danger">See more</button></a>
-                  </div>
-               </div>
-            </div>
-
-            <!-- sunglasses 3 -->
-            <div class="col-lg-3 col-md-4 col-12">
-               <div class="card border-dark">
-                  <img src="images/cards/sunglasses3.jpg" class="card-img-top" alt="sunglasses3.jpg">
-                  <div class="card-body">
-                     <h5 class="card-title">Sunglasses</h5>
-                  </div>
-                  <div class="card-body">
-                     <p class="card-text">Top class maal sun-glasses</p>
-                  </div>
-                  <div class="card-footer">
-                     <a href="#" class="card-link"><button type="button" class="btn btn-danger">See more</button></a>
+                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                     </button>
+                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                     </button>
                   </div>
                </div>
             </div>
 
          </div>
       </div>
+
+
    </main>
 
    <!-- footer -->
