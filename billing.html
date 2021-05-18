@@ -15,7 +15,7 @@
 
 </head>
 
-<body>
+<body onload="parseQuery()">
    <div class="container">
       <main>
          <div class="py-5 text-center">
@@ -35,34 +35,34 @@
                   <li class="list-group-item d-flex justify-content-between lh-sm">
                      <div>
                         <h6 class="my-0">Product name</h6>
-                        <small class="text-muted">Size-XL</small>
+                        <small class="text-muted" id="product-description"></small>
                      </div>
-                     <span class="text-muted">Men's T-shirt</span>
+                     <span class="text-muted" id="product-name"></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between lh-sm">
                      <div>
                         <h6 class="my-0">Product ID</h6>
                         <small class="text-muted"></small>
                      </div>
-                     <span class="text-muted">#48725</span>
+                     <span class="text-muted" id="product-id"></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between lh-sm">
                      <div>
                         <h6 class="my-0">Product Price</h6>
                         <small class="text-muted">MRP in INR</small>
                      </div>
-                     <span class="text-muted">Rs.625</span>
+                     <span class="text-muted" id="product-price"></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between bg-light">
                      <div class="text-success">
                         <h6 class="my-0">Discount</h6>
-                        <small>40%</small>
+                        <small id="discount-percentage"></small>
                      </div>
-                     <span class="text-success">- Rs.225</span>
+                     <span class="text-success" id="discount-amount" ></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between">
-                     <span>Total Rs.(INR)</span>
-                     <strong>Rs.400</strong>
+                     <span>Total (INR)</span>
+                     <strong id="total-amount"></strong>
                   </li>
                </ul>
             </div>
@@ -501,9 +501,33 @@
       </div>
    </div>
 
+   <!-- custum JavaScript -->
    <script>
       function fun(){
          alert("Backend is not build yet to enable form submission");
+      }
+      function parseQuery() {
+         var queryString = window.location.search;
+         var query = {};
+         var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+         for (var i = 0; i < pairs.length; i++) {
+            var pair = pairs[i].split('=');
+            query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+         }
+         // var res = str.replace(/microsoft/i, "W3Schools");
+         document.getElementById("product-id").innerHTML ="#".concat(query.pID);
+         document.getElementById("product-name").innerHTML = query.pName.replace(/_/g, " ");
+         document.getElementById("product-description").innerHTML = query.pDesc.replace(/_/g, " ");
+         document.getElementById("product-price").innerHTML = query.pPrice;
+         document.getElementById("discount-percentage").innerHTML = (query.discPerc).concat("%");
+         
+         var price = parseInt(query.pPrice);
+         var discountPer = parseInt(query.discPerc);
+
+         var discountAmt = (price*discountPer)/100;
+         var totalAmt = price - discountAmt;
+         document.getElementById("discount-amount").innerHTML = "-Rs.".concat(String(discountAmt));
+         document.getElementById("total-amount").innerHTML = "Rs.".concat(String(totalAmt));
       }
    </script>
 
