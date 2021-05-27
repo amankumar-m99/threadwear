@@ -7,7 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
    <!-- favicon -->
-   <link rel="shortcut icon" href="images/logo/favicon.png" type="image/x-icon">
+   <link rel="shortcut icon" href="../images/logo/favicon.png" type="image/x-icon">
 
    <title>Contact | Threadwear</title>
 
@@ -25,8 +25,8 @@
    <!-- navbar -->
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-         <a class="navbar-brand" href="about.html">
-            <img src="images/logo/brand_img.png" alt="threadwear logo pic" width="40" height="40"
+         <a class="navbar-brand" href="../index.html">
+            <img src="../images/logo/brand_img.png" alt="threadwear logo pic" width="40" height="40"
                style="border-radius: 50%; margin: auto 10px;" class="d-inline-block align-text-top">
             <span class="navbar-brand mb-0 h1">Threadwear</span>
          </a>
@@ -37,7 +37,7 @@
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
+                  <a class="nav-link" href="../index.html">Home</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link" href="store.html">Store</a>
@@ -56,11 +56,12 @@
          </div>
       </div>
    </nav>
+   
    <!-- main -->
    <main>
       <div class="container">
          <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="images/logo/logo.png" alt="Threadwear logo pic" width="100">
+            <img class="d-block mx-auto mb-4" src="../images/logo/logo.png" alt="Threadwear logo pic" width="100">
             <h2>Contact Threadwear</h2>
          </div>
          <div class="row g-5">
@@ -104,6 +105,7 @@
                            <option value="query">Query</option>
                            <option value="feedback">Feedback</option>
                            <option value="complaint">Complaint</option>
+                           <option value="bug">Report a bug</option>
                            <option value="support">Need tech support</option>
                         </select>
                         <div class="invalid-feedback">
@@ -134,54 +136,58 @@
    </main>
 
    <!-- footer -->
-   <footer class="my-5 pt-5 text-muted text-center text-small">
-      <p class="mb-1">© 2021 Threadwear</p>
-      <ul class="list-inline">
-         <li class="list-inline-item"><a href="privacymodal.html" id="launch-privacy-modal">Privacy</a></li>
-         <li class="list-inline-item"><a href="termsmodal.html" id="launch-terms-modal">Terms</a></li>
-         <li class="list-inline-item"><a href="supportmodal.html" id="launch-support-modal">Support</a></li>
-      </ul>
+   <footer>
+      <span class="my-5 pt-5 text-muted text-center text-small">
+         <p class="mb-1">© 2021 Threadwear</p>
+         <ul class="list-inline">
+            <li class="list-inline-item"><a href="privacymodal.html" id="launch-privacy-modal">Privacy</a></li>
+            <li class="list-inline-item"><a href="termsmodal.html" id="launch-terms-modal">Terms</a></li>
+            <li class="list-inline-item"><a href="supportmodal.html" id="launch-support-modal">Support</a></li>
+         </ul>
+
+      </span>
+
+      <!-- PRIVACY Modal -->
+      <div class="modal fade my-10" id="privacy-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+         <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content"></div>
+         </div>
+      </div>
+
+      <!-- TERMS Modal -->
+      <div class="modal fade my-10" id="terms-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+         <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content"></div>
+         </div>
+      </div>
+
+      <!-- SUPPORT Modal -->
+      <div class="modal fade my-10" id="support-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content"></div>
+         </div>
+      </div>
+
+      <!-- jquery for footer -->
+      <script>
+         $('#launch-privacy-modal').on('click', function (e) {
+            e.preventDefault();
+            $('#privacy-modal').modal('show').find('.modal-content').load($(this).attr('href'));
+         });
+
+         $('#launch-terms-modal').on('click', function (e) {
+            e.preventDefault();
+            $('#terms-modal').modal('show').find('.modal-content').load($(this).attr('href'));
+         });
+         $('#launch-support-modal').on('click', function (e) {
+            e.preventDefault();
+            $('#support-modal').modal('show').find('.modal-content').load($(this).attr('href'));
+         });
+      </script>
    </footer>
-
-   <!-- PRIVACY Modal -->
-   <div class="modal fade my-10" id="privacy-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-scrollable modal-dialog-centered">
-         <div class="modal-content"></div>
-      </div>
-   </div>
-
-   <!-- TERMS Modal -->
-   <div class="modal fade my-10" id="terms-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-scrollable modal-dialog-centered">
-         <div class="modal-content"></div>
-      </div>
-   </div>
-
-   <!-- SUPPORT Modal -->
-   <div class="modal fade my-10" id="support-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-         <div class="modal-content"></div>
-      </div>
-   </div>
-
-   <!-- jquery for footer -->
-   <script>
-      $('#launch-privacy-modal').on('click', function (e) {
-         e.preventDefault();
-         $('#privacy-modal').modal('show').find('.modal-content').load($(this).attr('href'));
-      });
-
-      $('#launch-terms-modal').on('click', function (e) {
-         e.preventDefault();
-         $('#terms-modal').modal('show').find('.modal-content').load($(this).attr('href'));
-      });
-      $('#launch-support-modal').on('click', function (e) {
-         e.preventDefault();
-         $('#support-modal').modal('show').find('.modal-content').load($(this).attr('href'));
-      });
-   </script>
 
    <script>
       function fun() {
