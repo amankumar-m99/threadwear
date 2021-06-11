@@ -25,7 +25,7 @@
    <!-- navbar -->
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-         <a class="navbar-brand" href="../index.html">
+         <a class="navbar-brand d-flex align-items-center" href="../index.html">
             <img src="../images/logo/brand_img.png" alt="threadwear logo pic" width="40" height="40"
                style="border-radius: 50%; margin: auto 10px;" class="d-inline-block align-text-top">
             <span class="navbar-brand mb-0 h1">Threadwear</span>
@@ -56,42 +56,24 @@
          </div>
       </div>
    </nav>
-   
-   <div class="container my-3">
-      <div class="row align-items-start">
-         <div class="col-sm-auto col-12 justify-content-center">
-            <h5>Shop by Category</h5>
+
+   <!-- shop by category -->
+   <div class="container my-1 my-md-4">
+      <div class="row align-items-center">
+         <div class="col-12 col-md-auto d-flex justify-content-center my-1">
+            <span class="h4">Shop By Category</span>
          </div>
-         <div class="col-sm-auto col-12 justify-content-start">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-               <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="pills-men-tab" data-bs-toggle="pill" data-bs-target="#men" type="button"
-                     role="tab" aria-controls="pills-men" aria-selected="true">Men</button>
-               </li>
-               <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="pills-women-tab" data-bs-toggle="pill" data-bs-target="#women"
-                     type="button" role="tab" aria-controls="pills-women" aria-selected="false">Women</button>
-               </li>
-               <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="pills-kids-tab" data-bs-toggle="pill" data-bs-target="#kids"
-                     type="button" role="tab" aria-controls="pills-kids" aria-selected="false">Kids</button>
-               </li>
-            </ul>
+         <div class="col-12 col-md-auto d-flex justify-content-center my-1">
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+               <button type="button" class="btn btn-outline-primary" id="men-tab-btn">Men</button>
+               <button type="button" class="btn btn-outline-primary" id="women-tab-btn">Women</button>
+               <button type="button" class="btn btn-outline-primary" id="kids-tab-btn">Kids</button>
+            </div>
          </div>
       </div>
    </div>
-   <div class="tab-content" id="pills-tabContent">
-      <div class="tab-pane fade" id="men" role="tabpanel" aria-labelledby="pills-men-tab">
-         <p>this is men section</p>
-         <iframe src="men.html" frameborder="0" style="height:100vh; width:100vw; border:none;"></iframe>
-      </div>
-      <div class="tab-pane fade" id="women" role="tabpanel" aria-labelledby="pills-women-tab">
-         <p>this is women section</p>
-      </div>
-      <div class="tab-pane fade" id="kids" role="tabpanel" aria-labelledby="pills-kids-tab">
-         <p>this is kids section</p>
-      </div>
-   </div>
+
+   <div id="category"></div>
 
    <!-- footer -->
    <footer>
@@ -102,7 +84,7 @@
             <li class="list-inline-item"><a href="termsmodal.html" id="launch-terms-modal">Terms</a></li>
             <li class="list-inline-item"><a href="supportmodal.html" id="launch-support-modal">Support</a></li>
          </ul>
-         
+
       </span>
 
       <!-- PRIVACY Modal -->
@@ -157,17 +139,45 @@
             var pair = pairs[i].split('=');
             query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
          }
-         if (typeof query.storeID === 'undefined') {
-            document.getElementById('pills-men-tab').classList.add("active");
-            document.getElementById('men').classList.add("show");
-            document.getElementById('men').classList.add("active");
+         if (query.storeID == 'women') {
+            let women = document.getElementById('women-tab-btn');
+            women.classList.remove("btn-outline-primary");
+            women.classList.add("btn-primary");
+            $('#category').load('women.html');
          }
-         var navItemID = "".concat("pills-", query.storeID, "-tab")
-         document.getElementById(navItemID).classList.add("active");
-         document.getElementById(query.storeID).classList.add("show");
-         document.getElementById(query.storeID).classList.add("active");
-
+         else if (query.storeID == 'kids') {
+            let kids = document.getElementById('kids-tab-btn');
+            kids.classList.remove("btn-outline-primary");
+            kids.classList.add("btn-primary");
+            $('#category').load('kids.html');
+         }
+         else {
+            let men = document.getElementById('men-tab-btn');
+            men.classList.remove("btn-outline-primary");
+            men.classList.add("btn-primary");
+            $('#category').load('men.html');
+         }
       }
+
+      $(document).ready(function () {
+         $('#men-tab-btn').click(function () {
+            $('#women-tab-btn, #kids-tab-btn').removeClass("btn-primary").addClass("btn-outline-primary");
+            $("#men-tab-btn").removeClass("btn-outline-primary").addClass("btn-primary");
+            $('#category').load('men.html');
+         });
+
+         $('#women-tab-btn').click(function () {
+            $('#men-tab-btn, #kids-tab-btn').removeClass("btn-primary").addClass("btn-outline-primary");
+            $("#women-tab-btn").removeClass("btn-outline-primary").addClass("btn-primary");
+            $('#category').load('women.html');
+         });
+
+         $('#kids-tab-btn').click(function () {
+            $('#men-tab-btn, #women-tab-btn').removeClass("btn-primary").addClass("btn-outline-primary");
+            $("#kids-tab-btn").removeClass("btn-outline-primary").addClass("btn-primary");
+            $('#category').load('kids.html');
+         });
+      });
    </script>
 
    <!-- Bootstrap Bundle with Popper -->

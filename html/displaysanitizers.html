@@ -19,7 +19,7 @@
    <!-- jquery -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-   <title>Masks | Threadwear</title>
+   <title>Sanitizers &amp; cleansing liquids | Threadwear</title>
 </head>
 
 <body onload="parseQuery()">
@@ -29,7 +29,7 @@
             <img src="../images/logo/logo.png" class="img-fluid" alt="threadwear-logo" max-width="90px">
          </div>
          <div class="col-auto">
-            <span class="h4 fw-normal">N-95 5 Layer Face Masks</span>
+            <span class="h4 fw-normal">Hand Sanitizers and cleansing liquids</span>
          </div>
       </div>
    </div>
@@ -99,7 +99,7 @@
             var pair = pairs[i].split('=');
             query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
          }         
-         document.getElementById("img-id").src = "../images/masks/".concat(query.imgid,".jpg");
+         document.getElementById("img-id").src = "../images/sanitizers/".concat(query.imgid,".jpg");
       }
    </script>
 
