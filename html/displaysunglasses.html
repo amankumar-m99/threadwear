@@ -19,7 +19,7 @@
    <!-- jquery -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-   <title>Sanitizers &amp; cleansing liquids | Threadwear</title>
+   <title>Sunglasses | Threadwear</title>
 </head>
 
 <body onload="parseQuery()">
@@ -29,7 +29,7 @@
             <img src="../images/logo/logo.png" class="img-fluid" alt="threadwear-logo" max-width="90px">
          </div>
          <div class="col-auto">
-            <span class="h4 fw-normal">Hand Sanitizers and cleansing liquids</span>
+            <span class="h4 fw-normal">Sunglasses</span>
          </div>
       </div>
    </div>
@@ -39,8 +39,8 @@
             <img src="" id="img-id" class="img-fluid" alt="mask pic">
          </div>
          <div class="col-md-5 col-sm-9 col-12">
-            <h3 class="fw-bolder">Hand Sanitizer</h3>
-            <p>Kills 99.99 % germs</p>
+            <h3 class="fw-bolder">Rayban stylish sunglass</h3>
+            <p>Flaunt your style</p>
             <span class="fs-5 fw-bolder">₹150</span>
             <span class="text-success fw-normal">(Price inclusive of GST)</span><br>
             <p><del class="text-danger fw-bold">MRP ₹249</del></p>
@@ -71,8 +71,8 @@
          </div>
          <div class="col-md-5 col-sm-9 col-12">
             <p class="h5">Product Description</p>
-            <span>Material: Non-woven<br>
-               Type: Face Masks <br>
+            <span>Material: Gorrilla glass<br>
+               Type: Googles <br>
                Sizes: free size <br>
                Country of origin: India <br>
             </span>
@@ -85,8 +85,8 @@
          <div class="col-12 col-sm-10 col-md-8 col-lg-6 d-flex justify-content-between px-3">
             <form action="billing.html" method="GET" id="billing-form">
                <input type="hidden" name="pID" id="pID" value="0000">
-               <input type="hidden" name="pName" value="Hand_Sanitizer">
-               <input type="hidden" name="pDesc" value="Kills_99.90%_germs">
+               <input type="hidden" name="pName" value="Rayban_Sunglass">
+               <input type="hidden" name="pDesc" value="Flaunt_your_style">
                <input type="hidden" name="pPrice" value="200">
                <input type="hidden" name="discPerc" value="20">
             </form>
@@ -106,8 +106,8 @@
          for (var i = 0; i < pairs.length; i++) {
             var pair = pairs[i].split('=');
             query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-         }
-         document.getElementById("img-id").src = "../images/sanitizers/".concat(query.imgid, ".jpg");
+         }         
+         document.getElementById("img-id").src = "../images/sunglasses/".concat(query.imgid,".jpg");
          document.getElementById("pID").value = query.imgid;
       }
       function submitBillingForm(){

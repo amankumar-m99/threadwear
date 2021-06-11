@@ -83,10 +83,18 @@
    <div class="container fixed-bottom">
       <div class="row justify-content-center align-items-center my-2 my-md-4">
          <div class="col-12 col-sm-10 col-md-8 col-lg-6 d-flex justify-content-between px-3">
+            <form action="billing.html" method="GET" id="billing-form">
+               <input type="hidden" name="pID" id="pID" value="0000">
+               <input type="hidden" name="pName" value="Surgical_Facemask">
+               <input type="hidden" name="pDesc" value="Pack_Of_100">
+               <input type="hidden" name="pPrice" value="200">
+               <input type="hidden" name="discPerc" value="20">
+            </form>
             <button class="btn btn-success w-50 me-2 me-md-5"><i class="bi bi-cart-plus"></i> Add to
                cart</button>
-            <a href="billing.html?pID=1234&pName=Surgical_Facemask&pDesc=Pack_Of_100&pPrice=200&discPerc=20"
-               class="btn btn-success w-50 ms-2 ms-md-5" role="button"><i class="bi bi-bag"></i> Buy Now</a>
+            <button type="submit" class="btn btn-success w-50 ms-2 ms-md-5" onclick="submitBillingForm()">
+               <i class="bi bi-bag"></i> Buy Now
+            </button>
          </div>
       </div>
    </div>
@@ -100,6 +108,10 @@
             query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
          }         
          document.getElementById("img-id").src = "../images/masks/".concat(query.imgid,".jpg");
+         document.getElementById("pID").value = query.imgid;
+      }
+      function submitBillingForm(){
+         document.getElementById('billing-form').submit();
       }
    </script>
 

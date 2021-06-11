@@ -17,8 +17,9 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
    <!-- jquery -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous">
+      </script>
    <title>Order checkout | Thread Wear</title>
 </head>
 
@@ -26,7 +27,7 @@
    <main>
       <div class="container">
          <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="../images/logo/twgreenlogowithtextcopy.png" alt="" width="90">
+            <img class="d-block mx-auto mb-4" src="../images/logo/logo.png" alt="" width="90">
             <h2>Checkout your order <i class="bi bi-cart-check"></i></h2>
          </div>
 
@@ -76,11 +77,12 @@
             <!-- billing details -->
             <div class="col-md-7 col-lg-8">
                <h4 class="mb-3">Billing address</h4>
-               <form onsubmit="fun()" class="needs-validation">
+               <form id="checkout-form" class="needs-validation">
                   <div class="row g-3">
                      <div class="col-sm-6">
+                        <input type="hidden" id="form-date" name="Date" value="">
                         <label for="firstName" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                        <input type="text" class="form-control" id="firstName" name="First_Name" value="" required>
                         <div class="invalid-feedback">
                            Valid first name is required.
                         </div>
@@ -88,7 +90,7 @@
 
                      <div class="col-sm-6">
                         <label for="lastName" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                        <input type="text" class="form-control" id="lastName" name="Last_Name" value="" required>
                         <div class="invalid-feedback">
                            Valid last name is required.
                         </div>
@@ -96,23 +98,29 @@
 
                      <div class="col-sm-6">
                         <label for="mob" class="form-label">Mobile No.</label>
-                        <input type="tel" class="form-control" name="mob" id="mob" placeholder="" required>
+                        <input type="tel" class="form-control" name="Mob" id="mob" placeholder="" required>
                      </div>
 
                      <div class="col-sm-6">
                         <label for="email" class="form-label">Email<span class="text-muted">(Optional)</span></label>
-                        <input type="email" class="form-control" id="email" placeholder="">
+                        <input type="email" class="form-control" id="email" name="Email" value="null">
                         <div class="invalid-feedback">
                            Please enter a valid email address for shipping updates.
                         </div>
                      </div>
+                     <!-- hidden input | Product info  -->
+                     <input type="hidden" name="Product_ID" id="form-prod-id" value="">
+                     <input type="hidden" name="Product_Name" id="form-prod-name" value="">
+                     <input type="hidden" name="Product_Price" id="form-prod-price" value="">
+                     <input type="hidden" name="Discount_Perc" id="form-disc-prec" value="">
+                     <input type="hidden" name="Total" id="form-total-amount" value="">
 
                      <div class="col-12">
                         <label for="address" class="form-label">Address
                            <span class="text-muted">(Line 1)</span>
                         </label>
-                        <input type="text" class="form-control" id="address"
-                           placeholder="Flat / House No. / Building Name" required="">
+                        <input type="text" class="form-control" id="address" name="Address_Line1"
+                           placeholder="Flat / House No. / Building Name" required>
                         <div class="invalid-feedback">
                            Please enter your shipping address correctly.
                         </div>
@@ -122,7 +130,8 @@
                         <label for="address2" class="form-label">Address
                            <span class="text-muted">(Line 2)</span>
                         </label>
-                        <input type="text" class="form-control" id="address2" placeholder="Street / Colony">
+                        <input type="text" class="form-control" id="address2" name="Address_Line2" value="null"
+                           placeholder="Street / Colony" value="null">
                         <div class="invalid-feedback">
                            Please enter your shipping address correctly.
                         </div>
@@ -132,7 +141,7 @@
                         <label for="landmark" class="form-label">Landmark
                            <span class="text-muted">(optional)</span>
                         </label>
-                        <input type="text" class="form-control" name="landmark" id="landmark" placeholder="landmark">
+                        <input type="text" class="form-control" id="landmark" name="Landmark" value="null">
                         <div class="invalid-feedback">
                            Please enter the landmark correctly.
                         </div>
@@ -140,7 +149,7 @@
 
                      <div class="col-md-5">
                         <label for="country" class="form-label">Country</label>
-                        <select class="form-select" id="country" required="" name="country">
+                        <select class="form-select" id="country" required name="Country">
                            <option value="India">India</option>
                         </select>
                         <div class="invalid-feedback">
@@ -150,27 +159,27 @@
 
                      <div class="col-md-4">
                         <label for="state" class="form-label">State/UT</label>
-                        <select class="form-select" id="state" required="" name="state">
-                           <option value="" selected>Select</option>
-                           <option value="AndhraPradesh">Andhra Pradesh</option>
-                           <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <select class="form-select" id="state" required name="State">
+                           <option value="null" selected>Select</option>
+                           <option value="Andhra_Pradesh">Andhra Pradesh</option>
+                           <option value="Arunachal_Pradesh">Arunachal Pradesh</option>
                            <option value="Assam">Assam</option>
                            <option value="Bihar">Bihar</option>
                            <option value="Chandigarh">Chandigarh</option>
                            <option value="Chhattisgarh">Chhattisgarh</option>
-                           <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and
-                              Diu</option>
+                           <option value="Dadra_and_Nagar_Haveli_and_Daman_and_Diu">Dadra &amp; Nagar Haveli and Daman
+                              &amp; Diu</option>
                            <option value="Delhi">Delhi</option>
                            <option value="Goa">Goa</option>
                            <option value="Gujarat">Gujarat</option>
                            <option value="Harayana">Harayana</option>
-                           <option value="Himachal Pradesh">Himachal Pradesh</option>
-                           <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                           <option value="Himachal_Pradesh">Himachal Pradesh</option>
+                           <option value="Jammu_and_Kashmir">Jammu & Kashmir</option>
                            <option value="Jharkhand">Jharkhand</option>
                            <option value="Karnataka">Karnataka</option>
                            <option value="Kerala">Kerala</option>
                            <option value="Ladakh">Ladakh</option>
-                           <option value="Madhya Pradesh">Madhya Pradesh</option>
+                           <option value="Madhya_Pradesh">Madhya Pradesh</option>
                            <option value="Maharashtra">Maharashtra</option>
                            <option value="Manipur">Manipur</option>
                            <option value="Meghalaya">Meghalaya</option>
@@ -181,12 +190,12 @@
                            <option value="Punjab">Punjab</option>
                            <option value="Rajasthan">Rajasthan</option>
                            <option value="Sikkim">Sikkim</option>
-                           <option value="Tamil Nadu">Tamil Nadu</option>
+                           <option value="Tamilnadu">Tamil Nadu</option>
                            <option value="Telangana">Telangana</option>
                            <option value="Tripura">Tripura</option>
-                           <option value="Uttar Pradesh">Uttar Pradesh</option>
+                           <option value="Uttar_Pradesh">Uttar Pradesh</option>
                            <option value="Uttarakhand">Uttarakhand</option>
-                           <option value="West Bengal">West Bengal</option>
+                           <option value="West_Bengal">West Bengal</option>
                         </select>
                         <div class="invalid-feedback">
                            Please provide a valid state.
@@ -195,8 +204,8 @@
 
                      <div class="col-md-3">
                         <label for="pincode" class="form-label">PIN Code</label>
-                        <input type="number" class="form-control" id="pincode" placeholder="6-digit area PIN code"
-                           required="">
+                        <input type="number" class="form-control" id="pincode" name="Pincode"
+                           placeholder="6-digit area PIN code" required>
                         <div class="invalid-feedback">
                            PIN code required.
                         </div>
@@ -209,15 +218,18 @@
 
                   <div class="my-3">
                      <div class="form-check">
-                        <input id="paytm" name="paymentMethod" type="radio" class="form-check-input" required="">
+                        <input id="paytm" name="Payment_Method" value="PayTM" type="radio" class="form-check-input"
+                           required>
                         <label class="form-check-label" for="paytm">PayTM</label>
                      </div>
                      <div class="form-check">
-                        <input id="phonepe" name="paymentMethod" type="radio" class="form-check-input" required="">
+                        <input id="phonepe" name="Payment_Method" value="PhonePe" type="radio" class="form-check-input"
+                           required>
                         <label class="form-check-label" for="phonepe">PhonePe</label>
                      </div>
                      <div class="form-check">
-                        <input id="cod" name="paymentMethod" type="radio" class="form-check-input" required="">
+                        <input id="cod" name="Payment_Method" value="COD" type="radio" class="form-check-input"
+                           required>
                         <label class="form-check-label" for="cod">Cash on Delivery</label>
                      </div>
                   </div>
@@ -226,10 +238,10 @@
 
                   <div class="row g-3">
                      <div class="col text-center">
-                        <button class="w-50 btn btn-success btn-lg" type="submit">Continue</button>
+                        <button onclick="submitCheckoutForm()" class="w-50 btn btn-success btn-lg"
+                           type="submit">Continue</button>
                      </div>
                   </div>
-
                </form>
             </div>
          </div>
@@ -292,9 +304,12 @@
 
    <!-- custom JavaScript -->
    <script>
-      function fun() {
-         alert("Backend is not build yet to enable form submission");
-      }
+      var productID;
+      var productName;
+      var productPrice;
+      var discountPerc;
+      var totalAmount;
+
       function parseQuery() {
          var queryString = window.location.search;
          var query = {};
@@ -303,20 +318,45 @@
             var pair = pairs[i].split('=');
             query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
          }
-         // var res = str.replace(/microsoft/i, "W3Schools");
-         document.getElementById("product-id").innerHTML = "#".concat(query.pID);
-         document.getElementById("product-name").innerHTML = query.pName.replace(/_/g, " ");
-         document.getElementById("product-description").innerHTML = query.pDesc.replace(/_/g, " ");
-         document.getElementById("product-price").innerHTML = query.pPrice;
-         document.getElementById("discount-percentage").innerHTML = (query.discPerc).concat("%");
 
-         var price = parseInt(query.pPrice);
-         var discountPer = parseInt(query.discPerc);
+         productID = query.pID
+         productName = query.pName;
+         productPrice = query.pPrice;
+         discountPerc = query.discPerc;
+
+         // var res = str.replace(/microsoft/i, "W3Schools");
+         document.getElementById("product-id").innerHTML = "#".concat(productID);
+         document.getElementById("product-name").innerHTML = productName.replace(/_/g, " ");
+         document.getElementById("product-description").innerHTML = query.pDesc.replace(/_/g, " ");
+         document.getElementById("product-price").innerHTML = productPrice;
+         document.getElementById("discount-percentage").innerHTML = (discountPerc).concat("%");
+
+         var price = parseInt(productPrice);
+         var discountPer = parseInt(discountPerc);
 
          var discountAmt = (price * discountPer) / 100;
-         var totalAmt = price - discountAmt;
+         totalAmount = price - discountAmt;
          document.getElementById("discount-amount").innerHTML = "-Rs.".concat(String(discountAmt));
-         document.getElementById("total-amount").innerHTML = "Rs.".concat(String(totalAmt));
+         document.getElementById("total-amount").innerHTML = "Rs.".concat(String(totalAmount));
+      }
+      function submitCheckoutForm() {
+         document.getElementById("form-prod-id").value = productID;
+         document.getElementById("form-prod-name").value = productName;
+         document.getElementById("form-prod-price").value = productPrice;
+         document.getElementById("form-disc-prec").value = discountPerc;
+         document.getElementById("form-total-amount").value = totalAmount;
+         document.getElementById("form-date").value = new Date();
+         $.ajax({
+            url: 'https://api.apispreadsheets.com/data/13943/',
+            type: 'post',
+            data: $("#checkout-form").serializeArray(),
+            success: function () {
+               alert("Form Data Submitted :)")
+            },
+            error: function () {
+               alert("There was an error :(")
+            }
+         });
       }
    </script>
 
