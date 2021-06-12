@@ -82,7 +82,7 @@
                      <div class="col-sm-6">
                         <input type="hidden" id="form-date" name="Date" value="">
                         <label for="firstName" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="firstName" name="First_Name" value="" required>
+                        <input type="text" class="form-control" id="firstName" name="First_Name" required>
                         <div class="invalid-feedback">
                            Valid first name is required.
                         </div>
@@ -90,7 +90,7 @@
 
                      <div class="col-sm-6">
                         <label for="lastName" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="lastName" name="Last_Name" value="" required>
+                        <input type="text" class="form-control" id="lastName" name="Last_Name" value="">
                         <div class="invalid-feedback">
                            Valid last name is required.
                         </div>
@@ -98,12 +98,12 @@
 
                      <div class="col-sm-6">
                         <label for="mob" class="form-label">Mobile No.</label>
-                        <input type="tel" class="form-control" name="Mob" id="mob" placeholder="" required>
+                        <input type="tel" class="form-control" name="Mob" id="mob" required>
                      </div>
 
                      <div class="col-sm-6">
                         <label for="email" class="form-label">Email<span class="text-muted">(Optional)</span></label>
-                        <input type="email" class="form-control" id="email" name="Email" value="null">
+                        <input type="email" class="form-control" id="email" name="Email" value="">
                         <div class="invalid-feedback">
                            Please enter a valid email address for shipping updates.
                         </div>
@@ -130,8 +130,8 @@
                         <label for="address2" class="form-label">Address
                            <span class="text-muted">(Line 2)</span>
                         </label>
-                        <input type="text" class="form-control" id="address2" name="Address_Line2" value="null"
-                           placeholder="Street / Colony" value="null">
+                        <input type="text" class="form-control" id="address2" name="Address_Line2"
+                           placeholder="Street / Colony" value="">
                         <div class="invalid-feedback">
                            Please enter your shipping address correctly.
                         </div>
@@ -141,7 +141,7 @@
                         <label for="landmark" class="form-label">Landmark
                            <span class="text-muted">(optional)</span>
                         </label>
-                        <input type="text" class="form-control" id="landmark" name="Landmark" value="null">
+                        <input type="text" class="form-control" id="landmark" name="Landmark" value="">
                         <div class="invalid-feedback">
                            Please enter the landmark correctly.
                         </div>
@@ -159,8 +159,8 @@
 
                      <div class="col-md-4">
                         <label for="state" class="form-label">State/UT</label>
-                        <select class="form-select" id="state" required name="State">
-                           <option value="null" selected>Select</option>
+                        <select class="form-select" id="state" name="State" placeholder="Select" required>
+                           <option value="" selected disabled>Select</option>
                            <option value="Andhra_Pradesh">Andhra Pradesh</option>
                            <option value="Arunachal_Pradesh">Arunachal Pradesh</option>
                            <option value="Assam">Assam</option>
@@ -331,10 +331,10 @@
                data: $("#checkout-form").serializeArray(),
 
                success: function () {
-                  alert("Order placed successfully :)")
+                  window.location.replace('success.html');
                },
                error: function () {
-                  alert("There was an error in placing the order :(")
+                  window.location.replace('fail.html');
                }
 
             });
