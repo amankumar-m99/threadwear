@@ -23,7 +23,7 @@
    <title>Order checkout | Thread Wear</title>
 </head>
 
-<body onload="parseQuery()">
+<body>
    <main>
       <div class="container">
          <div class="py-5 text-center">
@@ -238,8 +238,7 @@
 
                   <div class="row g-3">
                      <div class="col text-center">
-                        <button onclick="submitCheckoutForm()" class="w-50 btn btn-success btn-lg"
-                           type="submit">Continue</button>
+                        <button class="w-50 btn btn-success btn-lg" type="submit">Continue</button>
                      </div>
                   </div>
                </form>
@@ -304,59 +303,81 @@
 
    <!-- custom JavaScript -->
    <script>
-      var productID;
-      var productName;
-      var productPrice;
-      var discountPerc;
-      var totalAmount;
+      var queryString;
+      var query = {};
+      var pairs;
+      var totalAmt;
+
+      $(window).on('load', function () {
+         parseQuery();
+      });
+
+      $(document).ready(function () {
+         fillCartDetails();
+         $('#checkout-form').submit(function (e) {
+            e.preventDefault();            
+            
+            fillHiddenInputs(); //filling hidden inputs
+            var $form = $(this);
+
+            // check if the input is valid using a 'valid' property
+            // if (!$form.valid) return false;
+
+            // console.log('calling ajax....');
+            $.ajax({
+
+               url: 'https://api.apispreadsheets.com/data/13943/',
+               type: 'post',
+               data: $("#checkout-form").serializeArray(),
+
+               success: function () {
+                  alert("Order placed successfully :)")
+               },
+               error: function () {
+                  alert("There was an error in placing the order :(")
+               }
+
+            });
+
+         });
+
+      });
 
       function parseQuery() {
-         var queryString = window.location.search;
-         var query = {};
-         var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+         queryString = window.location.search;
+         pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
          for (var i = 0; i < pairs.length; i++) {
             var pair = pairs[i].split('=');
             query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
          }
-
-         productID = query.pID
-         productName = query.pName;
-         productPrice = query.pPrice;
-         discountPerc = query.discPerc;
-
-         // var res = str.replace(/microsoft/i, "W3Schools");
-         document.getElementById("product-id").innerHTML = "#".concat(productID);
-         document.getElementById("product-name").innerHTML = productName.replace(/_/g, " ");
-         document.getElementById("product-description").innerHTML = query.pDesc.replace(/_/g, " ");
-         document.getElementById("product-price").innerHTML = productPrice;
-         document.getElementById("discount-percentage").innerHTML = (discountPerc).concat("%");
-
-         var price = parseInt(productPrice);
-         var discountPer = parseInt(discountPerc);
-
-         var discountAmt = (price * discountPer) / 100;
-         totalAmount = price - discountAmt;
-         document.getElementById("discount-amount").innerHTML = "-Rs.".concat(String(discountAmt));
-         document.getElementById("total-amount").innerHTML = "Rs.".concat(String(totalAmount));
       }
-      function submitCheckoutForm() {
-         document.getElementById("form-prod-id").value = productID;
-         document.getElementById("form-prod-name").value = productName;
-         document.getElementById("form-prod-price").value = productPrice;
-         document.getElementById("form-disc-prec").value = discountPerc;
-         document.getElementById("form-total-amount").value = totalAmount;
+
+      function fillCartDetails() {
+         // var res = str.replace(/microsoft/i, "W3Schools");
+         if ((typeof query.pDesc) != 'undefined') {
+            document.getElementById("product-name").innerHTML = query.pName.replace(/_/g, " ");
+            document.getElementById("product-description").innerHTML = query.pDesc.replace(/_/g, " ");
+            document.getElementById("product-id").innerHTML = "#".concat(query.pID);
+            document.getElementById("product-price").innerHTML = query.pPrice;
+            document.getElementById("discount-percentage").innerHTML = (query.discPerc).concat("%");
+
+            var price = parseInt(query.pPrice);
+            var discountPer = parseInt(query.discPerc);
+
+            var discountAmt = (price * discountPer) / 100;
+            totalAmt = price - discountAmt;
+            document.getElementById("discount-amount").innerHTML = "-Rs.".concat(String(discountAmt));
+            document.getElementById("total-amount").innerHTML = "Rs.".concat(String(totalAmt));
+         }
+      }
+
+      function fillHiddenInputs() {
+         document.getElementById("form-prod-id").value = query.pID;
+         document.getElementById("form-prod-name").value = query.pName;
+         document.getElementById("form-prod-price").value = query.pPrice;
+         document.getElementById("form-disc-prec").value = query.discPerc;
+         document.getElementById("form-total-amount").value = totalAmt;
          document.getElementById("form-date").value = new Date();
-         $.ajax({
-            url: 'https://api.apispreadsheets.com/data/13943/',
-            type: 'post',
-            data: $("#checkout-form").serializeArray(),
-            success: function () {
-               alert("Form Data Submitted :)")
-            },
-            error: function () {
-               alert("There was an error :(")
-            }
-         });
       }
    </script>
 
