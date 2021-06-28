@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="images/logo/favicon.png" type="image/x-icon">
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+   <!-- jquery -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+   <title>Query</title>
+   <style>
+      #threadwear {
+         border: 2px solid green;
+         padding: 10px;
+      }
+
+      #form-div {
+         width: 50%;
+         margin: auto;
+         padding: 10px;
+         display: flex;
+         align-items: center;
+      }
+
+      th {
+         text-align: left;
+         padding: 3px;
+      }
+
+      button {
+         margin-left: 8px;
+      }
+   </style>
+</head>
+
+<body>
+   <h3 class="text-center">thid is test doc</h3>
+   <div class="container">
+      <div class="row">
+         <div id="form-div" class="p-1 col-12 col-md-9 col-lg-8">
+            <form>
+               <div class="container">
+                  <div class="row">
+                     <div class="col-12 col-md-auto">
+                        <label for="query-text" class="col-12 col-md-3">Query </label>
+                     </div>
+                     <div class="col-12 col-md-8">
+                        <input type="text" id="query-text">
+                     </div>
+                  </div>
+               </div>
+            </form>
+         </div>
+         <div class="col-12 col-md-2">
+            <button class="text-center" onclick="myfun()">Fetch</button>
+         </div>
+      </div>
+      <div class="row">
+         <div id='threadwear' class="p-1">
+            <table>
+               <tr>
+                  <th>Date</th>
+                  <td> : </td>
+                  <td id="date">...</td>
+               </tr>
+               <tr>
+                  <th>Name</th>
+                  <td> : </td>
+                  <td id="name">...</td>
+               </tr>
+               <tr>
+                  <th>Mob.No.</th>
+                  <td> : </td>
+                  <td id="mob">....</td>
+               </tr>
+               <tr>
+                  <th>E-mail</th>
+                  <td> : </td>
+                  <td id="email">...</td>
+               </tr>
+               <tr>
+                  <th>Product ID</th>
+                  <td> : </td>
+                  <td id="pid">...</td>
+               </tr>
+               <tr>
+                  <th>Product Name</th>
+                  <td> : </td>
+                  <td id="pname">...</td>
+               </tr>
+               <tr>
+                  <th>Product Price</th>
+                  <td> : </td>
+                  <td id="pprice">...</td>
+               </tr>
+               <tr>
+                  <th>Discount Price</th>
+                  <td> : </td>
+                  <td id="dprice">...</td>
+               </tr>
+               <tr>
+                  <th>Total</th>
+                  <td> : </td>
+                  <td id="total">...</td>
+               </tr>
+               <tr>
+                  <th>Address</th>
+                  <td> : </td>
+                  <td id="add">...</td>
+               </tr>
+               <tr>
+                  <th>Payment Method</th>
+                  <td> : </td>
+                  <td id="pay">....</td>
+               </tr>
+            </table>
+
+         </div>
+      </div>
+   </div>
+
+   <script>
+      function myfun() {
+         console.log("submitted");
+         //var queryURL = "https://api.apispreadsheets.com/data/13943/?query=select*from13943where";
+         // var query = document.getElementById('query-text').value;
+         // queryURL=queryURL.concat(query);
+         // console.log(query);
+         // console.log(typeof query);
+         // console.log(queryURL);
+
+         fetch("https://api.apispreadsheets.com/data/13943/?query=select*from13943whereName='aman'").then(res => {
+            if (res.status === 200) {
+               // SUCCESS
+               res.json().then(data => {
+                  const yourData = data;
+                  console.log(yourData);
+                  console.log(yourData["data"][0]["Name"]);
+                  document.getElementById("date").innerHTML = yourData["data"][0]["Date"];
+                  document.getElementById("name").innerHTML = yourData["data"][0]["Name"];
+                  document.getElementById("mob").innerHTML = yourData["data"][0]["Mob"];
+                  document.getElementById("email").innerHTML = yourData["data"][0]["Email"];
+                  document.getElementById("pid").innerHTML = yourData["data"][0]["Product_ID"];
+                  document.getElementById("pname").innerHTML = yourData["data"][0]["Product_Price"];
+                  document.getElementById("pprice").innerHTML = yourData["data"][0]["Product_Price"];
+                  document.getElementById("dprice").innerHTML = yourData["data"][0]["Discount_Perc"];
+                  document.getElementById("total").innerHTML = yourData["data"][0]["Total"];
+                  let address = String(yourData["data"][0]["Address_Line1"]).concat(", ", yourData["data"][0]["Address_Line2"], ", ", yourData["data"][0]["Landmark"], ", ", yourData["data"][0]["Country"], ", ", yourData["data"][0]["State"], ", ", yourData["data"][0]["Pincode"])
+                  document.getElementById("add").innerHTML = address;
+                  document.getElementById("pay").innerHTML = yourData["data"][0]["Payment_Method"];
+               }).catch(err => console.log(err))
+            }
+            else if (res.status === 402){
+               alert("Daily limit exhausted...!");
+            }
+            else {
+               alert("Something went wrong!");
+            }
+         });
+      }
+   </script>
+</body>
+
+</html>
