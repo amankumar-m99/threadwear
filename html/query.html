@@ -127,15 +127,10 @@
 
    <script>
       function myfun() {
-         console.log("submitted");
-         //var queryURL = "https://api.apispreadsheets.com/data/13943/?query=select*from13943where";
-         // var query = document.getElementById('query-text').value;
-         // queryURL=queryURL.concat(query);
-         // console.log(query);
-         // console.log(typeof query);
-         // console.log(queryURL);
-
-         fetch("https://api.apispreadsheets.com/data/13943/?query=select*from13943whereName='aman'").then(res => {
+         var queryURL = "https://api.apispreadsheets.com/data/13943/?query=select*from13943where";
+         var query = document.getElementById('query-text').value;
+         queryURL=queryURL.concat(query);
+         fetch(queryURL).then(res => {
             if (res.status === 200) {
                // SUCCESS
                res.json().then(data => {
